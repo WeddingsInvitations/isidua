@@ -54,6 +54,8 @@ body {
 .scroll-icon {
   margin-top: 2rem;
   animation: bounce 2s infinite;
+  justify-content: center;
+  align-items: center;
 }
 
 .scroll-icon img {
