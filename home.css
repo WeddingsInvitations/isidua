@@ -39,14 +39,14 @@
   border: 3px solid #f2dede;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   opacity: 0;
-  transform: translateY(-40px);
+  transform: scale(0.8);
   transition: all 1s ease-out;
   margin-bottom: 1.5rem;
 }
 
 .visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: scale(1);
 }
 
 .wedding-text {
