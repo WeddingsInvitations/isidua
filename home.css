@@ -1,161 +1,81 @@
-/* ================================
-   Reset & Base
-================================ */
-* {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-  font-family: 'Georgia', serif;
+  font-family: 'Domine', serif;
+  background: url('home/bgbody.png') no-repeat center center fixed;
+  background-size: cover;
   overflow-x: hidden;
 }
 
-/* ================================
-   Section Home
-================================ */
 #home {
-  position: relative;
   min-height: 100vh;
-  overflow: hidden;
-}
-
-/* Layer 1: Fixed Background */
-.background-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('home/bgbody.png') no-repeat center center;
-  background-size: cover;
-  z-index: -1;
-}
-
-/* Layer 2: Scrollable Content (Dipercepat & Dioptimasi) */
-.home-content {
-  position: relative;
-  z-index: 1;
-  padding: 40px 20px;
-  background-color: rgba(255, 255, 255, 0.85); /* Lebih solid agar lebih ringan */
-  backdrop-filter: none; /* Hindari ini kalau tidak perlu */
-  will-change: transform, opacity; /* Optimasi untuk animasi */
-  transform: translateZ(0); /* Paksakan GPU acceleration */
-}
-
-/* ================================
-   Animasi Masuk
-================================ */
-.animate-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.animate-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ================================
-   Logo Container
-================================ */
-.logo-container {
-  width: 120px;
-  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  padding: 4rem 1rem;
+  box-sizing: border-box;
 }
 
-.logo-container img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.logo {
-  position: absolute;
-  width: 20px;
-  transition: all 1.5s ease;
-  opacity: 0;
-}
-
-/* posisi awal */
-.logo1 {
-  top: 10%;
-  right: -100px;
-}
-
-.logo2 {
-  top: 40%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.logo3 {
-  top: 10%;
-  left: -100px;
-}
-
-/* posisi akhir */
-.animate .logo1 {
-  right: calc(50% + 10px); /* 50% posisi tengah + jarak 50 + setengah lebar gambar */
-  opacity: 1;
-}
-
-.animate .logo2 {
-  top: 10%;
-  opacity: 1;
-}
-
-.animate .logo3 {
-  left: calc(50% + 10px);
-  opacity: 1;
-}
-
-/* ================================
-   Foto Pasangan
-================================ */
-.photo-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
+.home-container {
+  text-align: center;
+  animation: fadeInUp 1.5s ease-out;
 }
 
 .couple-photo {
   width: 250px;
-  border-radius: 16px;
+  border-radius: 20px;
+  border: 3px solid #f2dede;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: all 1s ease-out;
+  margin-bottom: 1.5rem;
 }
 
-/* ================================
-   Kutipan Ayat
-================================ */
-.quote-layer {
-  background-color: rgba(255, 255, 255, 0.9);
-  width: 100%;
-  padding: 25px 15px;
-  margin: 30px 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  text-align: center;
+.wedding-text {
+  font-family: 'TheBest', cursive;
+  font-size: 1.5rem;
+  color: #b35a7c;
+  margin: 0.5rem 0;
 }
 
-.quote-box {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 10px;
+.couple-logo {
+  width: 160px;
+  margin: 1rem auto;
 }
 
-.quote {
-  font-style: italic;
-  font-size: 0.85rem;
-  color: #7a4b5a;
-  margin-bottom: 10px;
+.wedding-date {
+  font-family: 'Domine', serif;
+  font-size: 1.2rem;
+  color: #333;
 }
 
-.reference {
-  font-weight: bold;
-  color: #b26780;
+.scroll-icon {
+  margin-top: 2rem;
+  animation: bounce 2s infinite;
+}
+
+.scroll-icon img {
+  width: 30px;
+  opacity: 0.6;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
 }
