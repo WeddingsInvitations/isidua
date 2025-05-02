@@ -1,19 +1,30 @@
-body {
-  margin: 0;
-  font-family: 'Domine', serif;
-  background: url('home/bgbody.png') no-repeat center center fixed;
-  background-attachment: fixed;
+/* Background tetap */
+.background-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('home/bgbody.png') no-repeat center center;
   background-size: cover;
-  overflow-x: hidden;
+  background-attachment: fixed;
+  z-index: -1;
 }
 
+/* Konten scroll */
+.content-scroll {
+  position: relative;
+  z-index: 1;
+}
+
+/* Isi #home */
 #home {
   min-height: 100vh;
+  padding: 80px 20px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 4rem 1rem;
+  text-align: center;
   box-sizing: border-box;
 }
 
@@ -31,6 +42,11 @@ body {
   transform: translateY(-40px);
   transition: all 1s ease-out;
   margin-bottom: 1.5rem;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .wedding-text {
@@ -53,32 +69,7 @@ body {
 
 .scroll-icon {
   margin-top: 2rem;
-  animation: bounce 2s infinite;
+  display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.scroll-icon img {
-  width: 30px;
-  opacity: 0.6;
-}
-
-@keyframes fadeInUp {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(10px);
-  }
 }
